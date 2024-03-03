@@ -1,0 +1,39 @@
+GET http://localhost:5000/contacts HTTP/1.1
+Accept: application/json
+
+###
+
+GET http://localhost:5000/contacts/2
+Accept: application/json
+
+###
+GET http://localhost:5000/contacts/2/folders
+Accept: application/json
+
+###
+POST http://localhost:5000/contacts/2/folders
+Accept: application/json
+Content-Type: application/json
+{
+    "folder_id": 1
+}
+
+###
+DELETE http://localhost:5000/contacts/2/folders/1
+Accept: application/json
+
+###
+GET http://localhost:5000/folders
+Accept: application/json
+
+###
+GET http://localhost:5000/folders/3
+Accept: application/json
+
+###
+GET http://localhost:5000/folders/3/contacts
+Accept: application/json
+
+###
+DELETE http://localhost:5000/folders/3/contacts/1
+Accept: application/json

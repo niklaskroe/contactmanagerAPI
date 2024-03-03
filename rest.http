@@ -1,0 +1,72 @@
+// all contacts
+GET http://localhost:5000/contacts
+Accept: application/json
+
+###
+//detail contact
+GET http://localhost:5000/contacts/2
+Accept: application/json
+
+###
+// all folders
+GET http://localhost:5000/folders
+Accept: application/json
+
+###
+// detail folder
+GET http://localhost:5000/folders/3
+Accept: application/json
+
+###
+//content in folder
+GET http://localhost:5000/folders/3/contacts
+Accept: application/json
+
+###
+// folders in which contact with id is stored
+GET http://localhost:5000/contacts/1/folders
+Accept: application/json
+
+###
+// create resource in collection
+POST http://localhost:5000/contacts
+Content-Type: application/json
+[
+    {
+    "name": "George",
+    "surname": "Russell",
+    "number": 3152732383,
+    "email": "grussell@gmx.com"
+    } 
+]
+###
+// create folder
+POST http://localhost:5000/folders
+Content-Type: application/json
+
+{
+    "name": "Folder"
+}
+
+###
+//delete resource from collection
+DELETE http://localhost:5000/contacts/16
+Accept: application/json
+
+###
+//delete folder from collection
+DELETE http://localhost:5000/folders/12
+Accept: application/json
+
+###
+// create folder contact relation
+POST http://localhost:5000/folders/3/contacts
+Accept: application/json
+Content-Type: application/json
+
+{"contactid": 2}
+
+###
+// delete folder contact relation
+DELETE http://localhost:5000/folders/3/contacts/2
+Accept: application/json
